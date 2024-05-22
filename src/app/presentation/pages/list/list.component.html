@@ -1,0 +1,62 @@
+<section class="content">
+    <h1 class="text-center title">Manufactures</h1>
+
+    <div>
+        <div class="mx-auto w-100 mb-5 mt-3 d-flex justify-content-center">
+            <div class="col-4 d-flex align-items-center">
+                <i class="bi bi-search me-2"></i>
+                <input class="form-control border-2" type="text" #input (input)="filterByName(input?.value)"
+                    placeholder="Search by Manufacture" />
+            </div>
+        </div>
+
+        <p-table #dt2 [value]="manufactures" dataKey="id" [rows]="10" [loading]="isLoading" [paginator]="true"
+            selectionMode="single" [(selection)]="selectedManufacture"
+            [globalFilterFields]="['Mfr_CommonName', 'Mfr_Name', 'Country']" [tableStyle]="{ 'min-width': '75rem' }"
+            styleClass="p-datatable-striped">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width:8%">ID</th>
+                    <th style="width:22%">Brand</th>
+                    <th style="width:22%">Country</th>
+                    <th style="width:22%">Vehicle types</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-manufacture>
+                <tr class="table-row" [class.text-link]="manufacture.Mfr_ID === selectedManufacture?.Mfr_ID"
+                    (click)="openModal(manufacture)">
+                    <td>
+                        <small class="text-secondary d-block">#{{ manufacture.Mfr_ID }}</small>
+                    </td>
+                    <td>
+                        <strong>{{ manufacture.Mfr_CommonName }}</strong>
+                        <small class="text-muted d-block">{{ manufacture.Mfr_Name }}</small>
+                    </td>
+                    <td>
+                        <span class="ml-1 vertical-align-middle">
+                            {{ manufacture.Country }}
+                        </span>
+                    </td>
+                    <td>
+                        @if (manufacture.VehicleTypes?.length > 0){
+                        <span class="ml-1 vertical-align-middle">
+                            {{ manufacture.VehicleTypes?.length }} Vehicle Types
+                        </span>
+                        } @else {
+                        <span>-</span>
+                        }
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="5">No customers found.</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</section>
+
+
+<small class="text-muted d-block w-100 text-center mb-5">Developed with <i class="bi bi-heart-fill text-danger"></i> by
+    <a href="https://github.com/augusto-carlos" target="_blank">Augusto</a></small>
