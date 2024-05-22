@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    background-color: #f6f6f6;
+    font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.title {
+    font-weight: 800 !important;
+}
+
+thead th {
+    font-weight: normal !important;
+    background-color: #f0f0f0;
+    font-family: Poppins;
+}
+
+.table-row {
+    font-family: Poppins;
+    cursor: pointer !important;
+}
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
