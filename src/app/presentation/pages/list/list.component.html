@@ -5,8 +5,8 @@
         <div class="mx-auto w-100 mb-5 mt-3 d-flex justify-content-center">
             <div class="col-4 d-flex align-items-center">
                 <i class="bi bi-search me-2"></i>
-                <input class="form-control border-2" type="text" #input (input)="filterByName(input?.value)"
-                    placeholder="Search by Manufacture" />
+                <input class="form-control border-2" type="text" #input
+                    (input)="dt2.first = 0; filterByName(input?.value)" placeholder="Search by Manufacture" />
             </div>
         </div>
 
