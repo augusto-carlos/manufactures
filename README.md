@@ -1,8 +1,7 @@
 <img width="800" alt="Captura de ecrã 2024-05-22, às 02 33 57" src="https://github.com/augusto-carlos/manufactures/assets/62240490/958fd58e-565f-4790-a733-93015fc6cf70">
-
-<center>
+<br>
   [Demo](https://manufactures.vercel.app/])
-</center>
+
 
 
 # Manufactures
