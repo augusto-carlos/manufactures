@@ -87,7 +87,7 @@ export class ListComponent implements OnInit {
       backdrop: 'static',
     });
 
-    modalInstance.componentInstance.manufacture = this.selectedManufacture;
+    modalInstance.componentInstance.manufacture = manufacture;
   }
 
   clear(table: Table) {
